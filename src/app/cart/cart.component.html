@@ -1,0 +1,22 @@
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr >
+            <th>Number</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of itemsWithQuantity; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.totalPrice}}₺</td>
+            <td><button (click)="removeFromCart(item)">
+                <i class="fas fa-trash"></i>
+            </button></td>
+            
+        </tr>
+        </tbody>
