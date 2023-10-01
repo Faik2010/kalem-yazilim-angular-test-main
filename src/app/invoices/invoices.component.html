@@ -1,10 +1,10 @@
-<wj-flex-grid let i as index #flex
+<wj-flex-grid #flex
 headersVisibility="Column"
 [alternatingRowStep]="0"
 [itemsSource]="data"
 [allowSorting]="true"
 [allowResizing]="true"
-
+(beginningEdit)="onRowClick($event)"
 >
 
 </wj-flex-grid>

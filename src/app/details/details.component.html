@@ -1,1 +1,21 @@
-<p>details works!</p>
+<form [formGroup]="invoiceForm" class="row">
+    <div class="form-group col-6">
+      <label >Date</label>
+      <input  class="form-control" formControlName="date">
+    </div>
+    <div class="form-group col-6">
+      <label >E-Invoice</label>
+      <input type="text" class="form-control" formControlName="einvoice">
+    </div>
+    
+    <div class="form-group col-6">
+      <label >Status</label>
+      <input  class="form-control" formControlName="invoiced">
+    </div>
+    <div class="form-group col-6">
+      <label >Type</label>
+      <input type="text" class="form-control" formControlName="documentStatus">
+    </div>
+    
+    <button type="submit" class="btn btn-primary col-1 my-2">Save</button>
+  </form>

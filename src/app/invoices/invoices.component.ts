@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoicesService } from '../services/invoices.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoices',
@@ -12,7 +13,8 @@ export class InvoicesComponent implements OnInit {
   data=[]
 
   constructor(
-    private invoiceService:InvoicesService
+    private invoiceService:InvoicesService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class InvoicesComponent implements OnInit {
     this.invoiceService.getInvoices().subscribe((res) => {
       console.log(res.data)
       const newData = res.data.map((invoice, index) => ({
-        id: index + 1,
+        id: invoice.id,
         einvoice: invoice.einvoice,
         Date : new Date(invoice.document_date),
         company:invoice.company.description,
@@ -31,6 +33,12 @@ export class InvoicesComponent implements OnInit {
       }));
       this.data = newData;
     });
+  }
+  onRowClick(e: any) {
+    const selectedInvoice = this.data[e.row];
+    console.log("Seçilen Fatura Bilgisi:", selectedInvoice);
+    this.router.navigate(['/invoices/' + selectedInvoice.id])
+    // Burada seçilen fatura bilgisini konsola yazdırabilirsiniz.
   }
 
 }

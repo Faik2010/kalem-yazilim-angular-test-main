@@ -16,8 +16,8 @@ export class InvoicesService {
     let api = this.apiUrl + "invoices"
     return this.httpClient.get<responseModel>(api)
   }
-  singleInvoice(id:number){
+  singleInvoice(id:number):Observable<responseModel>{
     let api=this.apiUrl + "invoices/" + id
-    return this.httpClient.get(api)
+    return this.httpClient.get<responseModel>(api)
   }
 }
