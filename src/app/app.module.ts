@@ -10,6 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
+import { InvoicesComponent } from './invoices/invoices.component';
+import { WjGridFilterModule } from '@grapecity/wijmo.angular2.grid.filter';
+import { DetailsComponent } from './details/details.component';
+//filter özelliği dahil edilmiyor
 
 
 @NgModule({
@@ -19,6 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProductsComponent,
     CartComponent,
     NavbarComponent,
+    InvoicesComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-   
+    WjGridModule,
+    
+    
   ],
   providers: [
     productModel,

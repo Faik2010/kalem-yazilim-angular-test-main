@@ -25,5 +25,8 @@ export class NavbarComponent implements OnInit {
   goToCart(){
     this.router.navigate(['/cart'])
   }
+  goToInvoices(){
+    this.router.navigate(['/invoices'])
+  }
 
 }

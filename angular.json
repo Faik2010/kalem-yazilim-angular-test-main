@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@grapecity/wijmo.styles/wijmo.scss",
               "src/styles.scss"
             ],
             "scripts": []
